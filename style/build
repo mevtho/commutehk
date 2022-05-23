@@ -1,0 +1,3 @@
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+
+npx tailwindcss -i $SCRIPT_DIR/main.css -o $SCRIPT_DIR/../public/style.css --config $SCRIPT_DIR/tailwind.config.js --minify --watch
