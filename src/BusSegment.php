@@ -36,6 +36,7 @@ class BusSegment extends Segment
                     ...$response->data
                 ];
             }
+            uasort($this->data[$route], fn($a, $b) => $a->eta_seq - $b->eta_seq);
         }
     }
 
