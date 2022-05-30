@@ -61,8 +61,8 @@ function renderLink($label, $active, $parameters) {
 <footer class="flex-none bg-primary-200">
     <div class="px-2 py-1 text-sm">Showing time as</div>
     <div class="flex">
-        <?php renderLink("Clock", $showTimeAs !== "in", ["direction" => $direction, "show" => "time"]); ?>
-        <?php renderLink("Wait (minutes)", $showTimeAs === "in", ["direction" => $direction, "show" => "in"]); ?>
+        <?php renderLink("Clock", $showTimeAs !== Segment::VIEW_WAIT, ["direction" => $direction, "show" => Segment::VIEW_TIME]); ?>
+        <?php renderLink("Wait (minutes)", $showTimeAs === Segment::VIEW_WAIT, ["direction" => $direction, "show" => Segment::VIEW_WAIT]); ?>
     </div>
 </footer>
 </body>

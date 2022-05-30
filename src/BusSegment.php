@@ -19,7 +19,7 @@ class BusSegment extends Segment
 
         $this->data = [];
 
-        foreach ($this->routes as $route) {
+        foreach (array_keys($this->routes) as $route) {
             $this->data[$route] = [];
             foreach ($busRouteCompanies[$route] as $company) {
                 $response = call(
@@ -31,9 +31,20 @@ class BusSegment extends Segment
                     ]
                 );
 
+                $filteredData = array_filter($response->data ?? [], function ($data) use ($route) {
+                    $filters = $this->routes[$route];
+                    return array_reduce(
+                        array_keys($filters),
+                        function ($keep, $key) use ($data, $filters) {
+                            return $keep && $data->$key === $filters[$key] ;
+                        },
+                        true
+                    );
+                });
+
                 $this->data[$route] = [
                     ...$this->data[$route],
-                    ...($response->data ?? [])
+                    ...$filteredData
                 ];
             }
             uasort($this->data[$route], fn($a, $b) => strcmp($a->eta, $b->eta));
