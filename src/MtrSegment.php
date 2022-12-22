@@ -27,7 +27,7 @@ class MtrSegment extends Segment
         $access = $this->line . "-" . $this->station;
         $direction = $this->direction;
 
-        $this->data = $response->data->$access->$direction;
+        $this->data = $response->data->$access->$direction ?? [];
     }
 
     private function renderingTemplate($formatDate): string
