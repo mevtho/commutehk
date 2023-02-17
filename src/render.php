@@ -57,6 +57,11 @@ function renderLink($label, $active, $parameters) {
             echo $segment->render($showTimeAs);
         }
     ?>
+    <div class="flex-shrink-1 flex items-center justify-around">
+        <div class="<?php echo ['animate-pulse', 'animate-bounce', 'animate-ping'][rand(0,2)]; ?> ">
+            <img src="img/lapin.png" class="flex  " alt="" />
+        </div>
+    </div>
 </main>
 <footer class="flex-none bg-primary-200">
     <div class="px-2 py-1 text-sm">Showing time as</div>
