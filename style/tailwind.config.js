@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/*.php"],
+  content: ["./src/render.php"],
   theme: {
     extend: {
       colors: {
