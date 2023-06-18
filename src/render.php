@@ -6,9 +6,14 @@ function nowStr()
 }
 
 function renderLink($label, $active, $parameters) {
+    $allParameters = [
+        ...$parameters,
+        ...($_GET['u'] ? ['u' => $_GET["u"]] : [])
+    ];
+
     printf(
             "<a href=\"?%s\" class=\"w-1/2 p-2 text-center hover:bg-opacity-75 %s\">%s</a>",
-            http_build_query($parameters),
+            http_build_query($allParameters),
             $active ?  "font-bold text-black bg-primary-200" : "text-white bg-primary-700",
             $label
     );

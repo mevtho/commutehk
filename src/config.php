@@ -6,7 +6,7 @@ $busRouteCompanies = [
     "6" => ["ctb"],
     "66" => ["ctb", "nwfb"],
     "6X" => ["ctb"],
-    "15" => ["nwfb"],
+    "15" => ["ctb", "nwfb"],
 ];
 
 
