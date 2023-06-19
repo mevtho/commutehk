@@ -2,7 +2,7 @@
 
 return [
     "go" => [
-        new BusSegment("Wu Chung House &rarr; Exchange Square", "002569", ["6" => ["dir" => "I"], "6X" => ["dir" => "I"], "15" => ["dir" => "I"], "66" => ["dir" => "I"]]),
+        new BusSegment("Three Pacific Place &rarr; Exchange Square", "002489", ["6" => ["dir" => "I"], "6X" => ["dir" => "I"], "15" => ["dir" => "I"], "66" => ["dir" => "I"]]),
         new MtrSegment("Hong Kong Station &rarr; Kowloon Station", "TCL", "HOK", "UP")
     ],
     "back" => [
