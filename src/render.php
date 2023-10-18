@@ -6,9 +6,11 @@ function nowStr()
 }
 
 function renderLink($label, $active, $parameters) {
+    global $user;
+
     $allParameters = [
         ...$parameters,
-        ...($_GET['u'] ? ['u' => $_GET["u"]] : [])
+        ...($user  ? ['u' => $user] : [])
     ];
 
     printf(

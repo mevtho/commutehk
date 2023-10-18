@@ -2,12 +2,13 @@
 
 require_once('../src/config.php');
 
+$user = $_GET['u'] ?? false;
 $direction = ($_GET["direction"] ?? "") !== "back" ? "go" : "back";
 $showTimeAs = ($_GET["show"] ?? "") !== Segment::VIEW_WAIT ? Segment::VIEW_TIME : Segment::VIEW_WAIT;
 
 $configFile = "./configs/default.php";
-if ($_GET['u'] && file_exists("./configs/".$_GET['u'].".php")) {
-    $configFile = "./configs/".$_GET['u'].".php";
+if ($user && file_exists("./configs/".$user.".php")) {
+    $configFile = "./configs/".$user.".php";
 }
 
 $journey = require($configFile);
